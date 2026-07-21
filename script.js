@@ -1,11 +1,11 @@
 /* ==========================================================
    Core Webs Design — script.js
-   Mobile navigation, scroll-reveal animations, contact form
+   Mobilní navigace, scroll-reveal animace, kontaktní formulář
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ---------- Mobile navigation toggle ---------- */
+  /* ---------- Mobilní navigace ---------- */
   var navToggle = document.getElementById('navToggle');
   var mobileNav = document.getElementById('mobileNav');
 
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Close mobile nav after clicking a link
     mobileNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         mobileNav.classList.remove('open');
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---------- Scroll-reveal animation ---------- */
+  /* ---------- Scroll-reveal animace ---------- */
   var revealEls = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window && revealEls.length) {
@@ -41,11 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     revealEls.forEach(function (el) { observer.observe(el); });
   } else {
-    // Fallback: no IntersectionObserver support
     revealEls.forEach(function (el) { el.classList.add('in-view'); });
   }
 
-  /* ---------- Contact form (sends real e-mail via Formspree) ---------- */
+  /* ---------- Kontaktní formulář — odeslání přes Formspree ---------- */
   var form = document.getElementById('contactForm');
   var status = document.getElementById('formStatus');
 
